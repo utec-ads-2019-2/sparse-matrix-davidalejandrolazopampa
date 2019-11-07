@@ -1,10 +1,7 @@
 #ifndef SPARSE_MATRIX_MATRIX_H
 #define SPARSE_MATRIX_MATRIX_H
-
 #include <stdexcept>
-
 using namespace std;
-
 template <typename T>
 class Matrix {
 private:
@@ -12,18 +9,18 @@ private:
     unsigned rows, columns;
 
 public:
-    Matrix(unsigned rows, unsigned columns);
+    Matrix(unsigned rows, unsigned columns);//Tamaño
 
     void set(unsigned, unsigned, T);
     T operator()(unsigned, unsigned) const;
     Matrix<T> operator*(T scalar) const;
-    Matrix<T> operator*(Matrix<T> other) const;
-    Matrix<T> operator+(Matrix<T> other) const;
-    Matrix<T> operator-(Matrix<T> other) const;
+    Matrix<T> operator*(Matrix<T> other) const;//Multiplicacion
+    Matrix<T> operator+(Matrix<T> other) const;//suma
+    Matrix<T> operator-(Matrix<T> other) const;//Resta
     Matrix<T> transpose() const;
     void print() const;
 
-    ~Matrix();
+    ~Matrix();//Destructor
 };
 
 #endif //SPARSE_MATRIX_MATRIX_H

@@ -1,0 +1,3 @@
+C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/cmake-build-debug/CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir
+C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/cmake-build-debug/CMakeFiles/rebuild_cache.dir
