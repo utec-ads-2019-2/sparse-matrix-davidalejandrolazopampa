@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj"
+  "CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj"
   "CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/mocker/mocker.cpp.obj"
   "CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/tester/tester.cpp.obj"
   "libsparse_matrix_davidalejandrolazopampa.dll.a"

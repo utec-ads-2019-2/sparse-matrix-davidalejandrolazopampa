@@ -149,6 +149,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\sparse_matrix_davidalejandrolazopampa.dir\build.make CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+matrix.obj: matrix.cpp.obj
+
+.PHONY : matrix.obj
+
+# target to build an object file
+matrix.cpp.obj:
+	$(MAKE) -f CMakeFiles\sparse_matrix_davidalejandrolazopampa.dir\build.make CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj
+.PHONY : matrix.cpp.obj
+
+matrix.i: matrix.cpp.i
+
+.PHONY : matrix.i
+
+# target to preprocess a source file
+matrix.cpp.i:
+	$(MAKE) -f CMakeFiles\sparse_matrix_davidalejandrolazopampa.dir\build.make CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.i
+.PHONY : matrix.cpp.i
+
+matrix.s: matrix.cpp.s
+
+.PHONY : matrix.s
+
+# target to generate assembly for a file
+matrix.cpp.s:
+	$(MAKE) -f CMakeFiles\sparse_matrix_davidalejandrolazopampa.dir\build.make CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.s
+.PHONY : matrix.cpp.s
+
 mocker/mocker.obj: mocker/mocker.cpp.obj
 
 .PHONY : mocker/mocker.obj
@@ -215,6 +242,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... matrix.obj
+	@echo ... matrix.i
+	@echo ... matrix.s
 	@echo ... mocker/mocker.obj
 	@echo ... mocker/mocker.i
 	@echo ... mocker/mocker.s

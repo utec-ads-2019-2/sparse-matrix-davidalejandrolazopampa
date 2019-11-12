@@ -20,7 +20,7 @@ public:
     };
 
     friend class Matrix<T>;//Matrix puede aceeder a nodo
-    
+
     ~Node();
 };
 

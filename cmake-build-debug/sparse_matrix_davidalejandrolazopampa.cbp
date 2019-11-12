@@ -89,6 +89,9 @@
 		<Unit filename="C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/main.cpp">
 			<Option target="sparse_matrix_davidalejandrolazopampa"/>
 		</Unit>
+		<Unit filename="C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.cpp">
+			<Option target="sparse_matrix_davidalejandrolazopampa"/>
+		</Unit>
 		<Unit filename="C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h">
 			<Option target="sparse_matrix_davidalejandrolazopampa"/>
 		</Unit>
@@ -96,9 +99,6 @@
 			<Option target="sparse_matrix_davidalejandrolazopampa"/>
 		</Unit>
 		<Unit filename="C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/mocker/mocker.h">
-			<Option target="sparse_matrix_davidalejandrolazopampa"/>
-		</Unit>
-		<Unit filename="C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h">
 			<Option target="sparse_matrix_davidalejandrolazopampa"/>
 		</Unit>
 		<Unit filename="C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.cpp">

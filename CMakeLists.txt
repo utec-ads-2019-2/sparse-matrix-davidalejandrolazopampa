@@ -9,9 +9,6 @@ include_directories(tester)
 
 add_executable(sparse_matrix_davidalejandrolazopampa
         mocker/mocker.cpp
-        mocker/mocker.h
         tester/tester.cpp
-        tester/tester.h
         main.cpp
-        matrix.h
-        node.h)
+        matrix.cpp)
