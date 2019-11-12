@@ -3,16 +3,25 @@
 //Agregar cosas aqui
 template <typename T>
 class Matrix;
-
 template <typename T>
 class Node {
-protected:
-    Node<T> *next, *down;
-
 public:
-    explicit Node();
+    T;
+    int fila;
+    int columna;
+    Node<T> *next;
+    Node<T> *down;
 
-    friend class Matrix<T>;
+    explicit Node(){
+        next= nullptr;
+        down= nullptr;
+        fila=0;
+        columna=0;
+    };
+
+    friend class Matrix<T>;//Matrix puede aceeder a nodo
+    
+    ~Node();
 };
 
 #endif //SPARSE_MATRIX_NODE_H
