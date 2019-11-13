@@ -8,29 +8,30 @@ using namespace std;
 template <typename T>
 class Matrix {
 private:
-    //Node<T> *root;
-    vector<Node<T> *> fila_;
-    vector<Node<T> *> columna_;
+    vector<Node<T> *> fila_;//Vector para la fila
+    vector<Node<T> *> columna_;//Vector para la columna
     unsigned rows, columns;
-    bool PosColumna(unsigned x, unsigned y, Node<T> **&pointer);//initialize Rows and Cols
-    bool PosFila(unsigned x, unsigned y, Node<T> **&pointer);
-    void inicializar(unsigned rows, unsigned columns) ;
 public:
-    int tamaño =3;
-    Matrix(unsigned rows, unsigned columns);//Tamaño
+    Matrix(unsigned rows, unsigned columns);//Tamaño de la matrix dispersa
 
-    void set(unsigned, unsigned, T);
+    bool SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer);//initialize Rows and Cols
+    bool SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer);//Usamos doble puntero para esto
+
+    void inicializar(unsigned rows, unsigned columns); //A todos Null fila y columna
+
+    void set(unsigned, unsigned, T);//Para chantar los nuevos nodos o desaparecerlos
+
     T operator()(unsigned, unsigned) const;
-
-    Matrix<T> operator*(T scalar) const;
+    Matrix<T> operator=(Matrix<T> other) const;//Operador igual
+    Matrix<T> operator*(T escalar) const;//Operador escalar (solo multiplicar)
     Matrix<T> operator*(Matrix<T> other) const;//Multiplicacion
     Matrix<T> operator+(Matrix<T> other) const;//suma
     Matrix<T> operator-(Matrix<T> other) const;//Resta
-    Matrix<T> transpose() const;
-    void ceros(int num)const;
-    void Mostrar() const;
+    Matrix<T> Transpuesta() const;//Invertir Filas y Columnas
+    void ceros(int num)const;//imprimir los 0 en la funcion Mostrar();
+    void Mostrar() const;//Imprimir matriz
 
-    ~Matrix();//Destructor
+    ~Matrix();//Destructor; debo eliminar los nodos
 };
 
 #endif //SPARSE_MATRIX_MATRIX_H

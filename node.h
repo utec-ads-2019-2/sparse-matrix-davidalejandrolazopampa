@@ -6,12 +6,9 @@ class Matrix;
 template <typename T>
 class Node {
 public:
-    //T;//Aun no estoy seguro mmm
-    int fila;
-    int columna;
     Node<T> *next;
     Node<T> *down;
-
+    int fila,columna;
     explicit Node(){
         next= nullptr;
         down= nullptr;
@@ -21,15 +18,15 @@ public:
 
     friend class Matrix<T>;//Matrix puede aceeder a nodo
 
-    void killSelf){
-        if (this->next){
+    void killSelf(){//Lo uso ya que esta en casi todos los proyectos de usted profe
+        if (this->next){//Para el next
             this->next->killSelf();
-        }else if(this->down){
+        }else if(this->down){//Para el down
             this->down->killSelf();
         }
      delete this;
     }
-    ~Node(){};
+    ~Node(){}
 
 };
 

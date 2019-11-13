@@ -5,8 +5,23 @@
 
 #include <iostream>
 using namespace std;
+
+
+
 template <typename T>
 Matrix<T>::Matrix(unsigned rows, unsigned columns) {
+
+}
+template <typename T>
+bool Matrix<T>::SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer) {
+
+}
+template <typename T>
+bool Matrix<T>::SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer) {
+
+}
+template <typename T>
+void Matrix<T>::inicializar(unsigned rows, unsigned columns) {
 
 }
 
@@ -14,7 +29,6 @@ template <typename T>
 void Matrix<T>::set(unsigned, unsigned, T){
 
 }
-
 template <typename T>
 T Matrix<T>::operator()(unsigned f, unsigned c) const {// agregue el F C nose mmm vere vere
    /*
@@ -32,11 +46,8 @@ T Matrix<T>::operator()(unsigned f, unsigned c) const {// agregue el F C nose mm
         }
     }*/
 }
-
-
-
 template <typename T>
-Matrix<T> Matrix<T>::operator*(T scalar) const{
+Matrix<T> Matrix<T>::operator*(T escalar) const{
 
 }
 template <typename T>
@@ -84,7 +95,7 @@ Matrix<T> Matrix<T>::operator-(Matrix<T> other) const{//Solo cambiaria el signo 
     }
 }
 template <typename T>
-Matrix<T> Matrix<T>::transpose() const{
+Matrix<T> Matrix<T>::Transpuesta() const{
 
 }
 template <typename T>
@@ -102,7 +113,7 @@ template <typename T>
 void Matrix<T>::ceros(int num) const {
     int contador=0;
     for(int j=0 ; j < num ; ++j) {
-        cout<<setw(tamaño)<<contador<<" ";
+        cout<<" "<<contador<<" ";
     }
 }
 
@@ -115,5 +126,4 @@ Matrix<T>::~Matrix() {//Aun no estoy seguro que esto sea asi xD puedo poner kill
     }
     fila_.clear();
     columna_.clear();
-}
 }
