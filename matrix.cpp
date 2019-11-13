@@ -47,7 +47,7 @@ void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
     }
 }
 template <typename T>
-Matrix<T>::Matrix(unsigned rows, unsigned columns) {
+Matrix<T>::Matrix(unsigned fila, unsigned columna) {
     inicializar(this->fila_,this->columna_);
 }
 template <typename T>
@@ -71,8 +71,8 @@ void Matrix<T>::set(unsigned fila, unsigned columna, T valor){
     Node<T> **DPunteroX = nullptr;
     Node<T> **DPunteroY = nullptr;
     //devolvere el bool
-    auto resultY = whichPosInCol(fila, columna, DPunteroY);
-    auto resultX = whichPosInRow(fila, columna, DPunteroX);
+    auto resultY = SiguienteColumna(fila, columna, DPunteroY);
+    auto resultX = SiguienteFila(fila, columna, DPunteroX);
     if (resultY) {//Si existe el Node
         if (valor) {//si es diferente de 0
             (*DPunteroY)->data = valor;
@@ -114,32 +114,45 @@ T Matrix<T>::operator()(unsigned f, unsigned c) const {// agregue el F C nose mm
 }
 template <typename T>
 Matrix<T> Matrix<T>::operator*(T escalar) const{
-    Matrix<T> result(this->fila, this->columna);//objeto nuevo
+    Matrix<T> NuevoResultado(this->fila, this->columna);//objeto nuevo
     for (auto auxCol: fila_) {//bloque
         if (auxCol)//Sigo sigo sigo
         {
             while (auxCol) {
-                result.set(auxCol->fila, auxCol->columna, auxCol->data * escalar);//Hago la accion
+                NuevoResultado.set(auxCol->fila, auxCol->columna, auxCol->data * escalar);//Hago la accion
                 auxCol = auxCol->down;//empiso el primero y luego el siguente del siguente
             }
         }
     }
-    return result;
+    return NuevoResultado;
 }
 template <typename T>
 Matrix<T> Matrix<T>::operator*(Matrix<T> other) const{//Tengo que revisarlo xD
-
+    int i,j,k;T aux = 0;
+    Matrix<T> NuevoResultado(this->fila, other.columna);
+    if(this->columna != other.fila) {
+        cout<<"No coincide el tamaño";
+    }
+    for (i=0;i< NuevoResultado.fila;++i) {
+        for (j=0;j< NuevoResultado.columna;++j) {
+            for (k=0;k<this->columna;k++){
+                aux = aux +  operator()(i, k) * other(k, j);
+                NuevoResultado.set(i, j, aux);
+            }
+        }
+    }
+    return NuevoResultado;
 }
 template <typename T>
 Matrix<T> Matrix<T>::operator+(Matrix<T> other) const{//Posiblemente
-    Matrix<T> result(this->rows, this->columns);//Se crea el nuevo
-    if(this->rows != other.rows and this->columns != other.columns) {
+    Matrix<T> NuevoResultado(this->fila, this->columna);//Se crea el nuevo
+    if(this->fila != other.fila and this->columna != other.columna) {
         cout<<"No coincide el tamaño";
     }
     for (auto AuxFila: fila_) {
         if (AuxFila) {
             while (AuxFila) {
-                result.set(
+                NuevoResultado.set(
                         AuxFila->fila,
                         AuxFila->columna,
                         AuxFila->data + other(AuxFila->fila, AuxFila->columna));
@@ -147,18 +160,18 @@ Matrix<T> Matrix<T>::operator+(Matrix<T> other) const{//Posiblemente
             }
         }
     }
-    return result;
+    return NuevoResultado;
 }
 template <typename T>
 Matrix<T> Matrix<T>::operator-(Matrix<T> other) const{//Solo cambiaria el signo mmm
-    Matrix<T> result(this->rows, this->columns);//Se crea el nuevo
-    if(this->rows != other.rows and this->columns != other.columns) {
+    Matrix<T> NuevoResultado(this->fila, this->columna);//Se crea el nuevo
+    if(this->fila != other.fila and this->columna != other.columna) {
         cout<<"No coincide el tamaño";
     }
     for (auto AuxFila: fila_) {
         if (AuxFila) {
             while (AuxFila) {
-                result.set(
+                NuevoResultado.set(
                         AuxFila->fila,
                         AuxFila->columna,
                         AuxFila->data - other(AuxFila->fila, AuxFila->columna));
@@ -166,7 +179,7 @@ Matrix<T> Matrix<T>::operator-(Matrix<T> other) const{//Solo cambiaria el signo 
             }
         }
     }
-    return result;
+    return NuevoResultado;
 }
 template <typename T>
 Matrix<T> Matrix<T>::Transpuesta() const{
