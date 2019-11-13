@@ -4,13 +4,19 @@
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj: ../matrix.h
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj: ../mocker/mocker.h
+CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj: ../node.h
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj: ../tester/tester.h
+
+CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj: ../matrix.cpp
+CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj: ../matrix.h
+CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj: ../node.h
 
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/mocker/mocker.cpp.obj: ../mocker/mocker.cpp
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/mocker/mocker.cpp.obj: ../mocker/mocker.h
 
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/tester/tester.cpp.obj: ../matrix.h
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/tester/tester.cpp.obj: ../mocker/mocker.h
+CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/tester/tester.cpp.obj: ../node.h
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/tester/tester.cpp.obj: ../tester/tester.cpp
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/tester/tester.cpp.obj: ../tester/tester.h
 

@@ -5,12 +5,18 @@ CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/main.cpp
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/mocker/mocker.h
+ C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.h
+CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj
+ C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.cpp
+ C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
+ C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/mocker/mocker.cpp.obj
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/mocker/mocker.cpp
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/mocker/mocker.h
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/tester/tester.cpp.obj
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/mocker/mocker.h
+ C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.cpp
  C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.h

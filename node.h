@@ -6,7 +6,7 @@ class Matrix;
 template <typename T>
 class Node {
 public:
-    T;
+    //T;//Aun no estoy seguro mmm
     int fila;
     int columna;
     Node<T> *next;
@@ -21,7 +21,16 @@ public:
 
     friend class Matrix<T>;//Matrix puede aceeder a nodo
 
-    ~Node();
+    void killSelf){
+        if (this->next){
+            this->next->killSelf();
+        }else if(this->down){
+            this->down->killSelf();
+        }
+     delete this;
+    }
+    ~Node(){};
+
 };
 
 #endif //SPARSE_MATRIX_NODE_H
