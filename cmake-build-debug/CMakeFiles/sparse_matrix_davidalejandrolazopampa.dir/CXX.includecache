@@ -6,15 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/main.cpp
-iostream
--
-node.h
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h
+C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.cpp
 matrix.h
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
-tester/tester.h
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.h
+iostream
+-
 
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
 stdexcept
@@ -26,27 +22,5 @@ iomanip
 node.h
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h
 
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/mocker/mocker.h
-random
--
-type_traits
--
-
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h
-
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.h
-stdexcept
--
-iostream
--
-assert.h
--
-vector
--
-algorithm
--
-../mocker/mocker.h
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/mocker/mocker.h
-../matrix.h
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
 

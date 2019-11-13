@@ -191,7 +191,17 @@ Matrix<T> Matrix<T>::operator-(Matrix<T> other) const{//Solo cambiaria el signo 
 }
 template <typename T>
 Matrix<T> Matrix<T>::Transpuesta() const{
+    Matrix<T> NuevoResultado(this->columna, this->fila);
 
+    for( int i=0 ; i < this->fila ; ++i) {
+        if (!this->fila_[i]) continue;
+        auto auxColumna = fila_[i];
+        while(auxColumna) {
+            NuevoResultado.set(auxColumna->columna, auxColumna->columna, auxColumna->data);
+            auxColumna = auxColumna->down;
+        }
+    }
+    return NuevoResultado;
 }
 template <typename T>
 void Matrix<T>::Mostrar() const{//Espero no morir aqui
