@@ -2,10 +2,8 @@
 // Created by David Lazo on 11/11/2019.
 //
 #include "matrix.h"
-
 #include <iostream>
 using namespace std;
-
 template <typename T>
 bool Matrix<T>::SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer) {
     bool valor = false;
@@ -93,8 +91,8 @@ void Matrix<T>::set(unsigned fila, unsigned columna, T valor){
         if (valor) {
             //Creo el nodo como lista
             auto newNode = new Node<T>();
-            newNode->posX = fila;
-            newNode->posY = columna;
+            newNode->fila = fila;
+            newNode->columna = columna;
             newNode->valor = valor;
             //Aqui asigno
             newNode->down = *DPunteroY;
@@ -211,7 +209,7 @@ void Matrix<T>::Mostrar() const{//Espero no morir aqui
             int num = AuxColumna->columna;
             ceros(num);
             while (AuxColumna) {
-                printZeros(AuxColumna->columna - num - 1);
+                ceros(AuxColumna->columna - num - 1);
                 cout << " " << AuxColumna->valor << " ";
                 num = AuxColumna->columna;
                 AuxColumna = AuxColumna->down;
