@@ -4,8 +4,8 @@
 #include "tester/tester.h"
 //David Lazo
 int main() {
-    //Tester::execute();
-    /*
+
+    /*  Tester::execute();
     double f1,c1,f2,c2;
     Matrix m1(f1,c1);
     Matrix m2(f2,c2);

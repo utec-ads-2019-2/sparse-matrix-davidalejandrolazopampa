@@ -34,8 +34,20 @@ bool Matrix<T>::SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer) {
     }
     return valor;
 }
-template <typename T>
+/*template <typename T>
 void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
+    //Elimino primero lo que hay
+    fila_.clear(),columna_.clear();
+    //A todos Null
+    for(int i=0; i < fila; ++i){
+        fila_.push_back(nullptr);
+    }
+    for(int i=0; i<columna;++i){
+        columna_.push_back(nullptr);
+    }
+}*/
+template <typename T>
+Matrix<T>::Matrix(unsigned fila, unsigned columna) {
     //Elimino primero lo que hay
     fila_.clear(),columna_.clear();
     //A todos Null
@@ -47,15 +59,11 @@ void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
     }
 }
 template <typename T>
-Matrix<T>::Matrix(unsigned fila, unsigned columna) {
-    inicializar(this->fila_,this->columna_);
-}
-template <typename T>
 Matrix<T>::Matrix(const Matrix &CopiaMatrix) {
     int i,j;
     this->columna = CopiaMatrix.columna;
     this->fila = CopiaMatrix.fila;
-    inicializar(this->fila,this->columna);
+    Matrix(this->fila,this->columna);
     for(i=0 ; i < this->fila ; ++i) {
         for(j=0 ; j < this->columna ; ++j) {
             T valor;
@@ -187,13 +195,24 @@ Matrix<T> Matrix<T>::Transpuesta() const{
 }
 template <typename T>
 void Matrix<T>::Mostrar() const{//Espero no morir aqui
-    /*int i, j;//Elimine el root asi que vemos que hago aqui ,,,
-    for(i=0; i<rows; i++){
-        for(j=0; j<columns; j++){
-            cout<<root[i][j]<<"  ";
+    for( int i=0 ; i < this->fila ; ++i) {
+        if (this->fila_[i]) {
+            auto AuxColumna = fila_[i];
+            int num = AuxColumna->columna;
+            ceros(num);
+            while (AuxColumna) {
+                printZeros(AuxColumna->columna - num - 1);
+                cout << " " << AuxColumna->data << " ";
+                num = AuxColumna->columna;
+                AuxColumna = AuxColumna->down;
+            }
+            ceros(columna - num - 1);
+            cout << endl;
+        } else {
+            ceros(this->columna);
+            cout << endl;
         }
-        cout<<endl;
-    }*/
+    }
 }
 
 template <typename T>
@@ -208,7 +227,8 @@ template <typename T>
 Matrix<T>::~Matrix() {//Aun no estoy seguro que esto sea asi xD puedo poner kills... pero no se
     for(auto auxColumna : columna_ ) {
         if(auxColumna) {
-            auxColumna->killSelf(); break;
+            auxColumna->killSelf();
+            break;
         }
     }
     fila_.clear();

@@ -16,12 +16,6 @@ C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matri
 tester/tester.h
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.h
 
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.cpp
-matrix.h
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
-iostream
--
-
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/matrix.h
 stdexcept
 -
@@ -39,10 +33,6 @@ type_traits
 -
 
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/node.h
-
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.cpp
-tester.h
-C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.h
 
 C:/Users/David Lazo/Documents/GitHub/sparse-matrix-davidalejandrolazopampa/tester/tester.h
 stdexcept
