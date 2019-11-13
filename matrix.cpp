@@ -34,7 +34,7 @@ bool Matrix<T>::SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer) {
     }
     return valor;
 }
-/*template <typename T>
+template <typename T>
 void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
     //Elimino primero lo que hay
     fila_.clear(),columna_.clear();
@@ -45,7 +45,7 @@ void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
     for(int i=0; i<columna;++i){
         columna_.push_back(nullptr);
     }
-}*/
+}
 template <typename T>
 Matrix<T>::Matrix(unsigned fila, unsigned columna) {
     //Elimino primero lo que hay
@@ -63,7 +63,7 @@ Matrix<T>::Matrix(const Matrix &CopiaMatrix) {
     int i,j;
     this->columna = CopiaMatrix.columna;
     this->fila = CopiaMatrix.fila;
-    Matrix(this->fila,this->columna);
+    inicializar(this->fila,this->columna);
     for(i=0 ; i < this->fila ; ++i) {
         for(j=0 ; j < this->columna ; ++j) {
             T valor;

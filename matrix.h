@@ -20,7 +20,7 @@ public:
     bool SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer);//initialize Rows and Cols
     bool SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer);//Usamos doble puntero para esto
 
-    //void inicializar(unsigned fila, unsigned columna); //A todos Null fila y columna
+    void inicializar(unsigned fila, unsigned columna); //A todos Null fila y columna
     void set(unsigned fila, unsigned columna, T valor);//Para chantar los nuevos nodos o desaparecerlos
 
     T operator()(unsigned, unsigned) const;
