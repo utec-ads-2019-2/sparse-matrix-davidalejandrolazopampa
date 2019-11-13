@@ -6,25 +6,65 @@
 #include <iostream>
 using namespace std;
 
-
-
-template <typename T>
-Matrix<T>::Matrix(unsigned rows, unsigned columns) {
-
-}
 template <typename T>
 bool Matrix<T>::SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer) {
-
+    bool valor = false;
+    for (pointer = &fila_[x]; NULL != *pointer; pointer = &(*pointer)->down) {//recore y asigno
+        if (x == (*pointer)->columnaa) {
+            valor = true;//existe
+            break;
+        } else if (x < (*pointer)-> columnaa) {//si es menor ----
+            *pointer = (*pointer)->down;//sigue
+            valor = false;//No existe --- voy al set y meto
+        }
+    }
+    return valor;
 }
 template <typename T>
 bool Matrix<T>::SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer) {
-
+    bool valor = false;
+    for (pointer = &columna_[x]; NULL != *pointer; pointer = &(*pointer)->next) {//recore y asigno
+        if (x == (*pointer)->filaa) {
+            valor = true;//existe
+            break;
+        } else if (x < (*pointer)-> filaa) {//si es menor ----
+            *pointer = (*pointer)->next;//sigue
+            valor = false;//No existe --- voy al set y meto
+        }
+    }
+    return valor;
 }
 template <typename T>
-void Matrix<T>::inicializar(unsigned rows, unsigned columns) {
-
+void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
+    //Elimino primero lo que hay
+    fila_.clear(),columna_.clear();
+    //A todos Null
+    for(int i=0; i < fila; ++i){
+        fila_.push_back(nullptr);
+    }
+    for(int i=0; i<columna;++i){
+        columna_.push_back(nullptr);
+    }
 }
-
+template <typename T>
+Matrix<T>::Matrix(unsigned rows, unsigned columns) {
+    inicializar(this->fila_,this->columna_);
+}
+template <typename T>
+Matrix<T>::Matrix(const Matrix &CopiaMatrix) {
+    int i,j;
+    this->columna = CopiaMatrix.columna;
+    this->fila = CopiaMatrix.fila;
+    inicializar(this->fila,this->columna);
+    for(i=0 ; i < this->fila ; ++i) {
+        for(j=0 ; j < this->columna ; ++j) {
+            T valor;
+            valor = CopiaMatrix(i, j);
+            if (!!valor) {set(i, j, valor);//se manda al set para actualizar
+            }
+        }
+    }
+}
 template <typename T>
 void Matrix<T>::set(unsigned, unsigned, T){
 
@@ -82,6 +122,7 @@ Matrix<T> Matrix<T>::operator+(Matrix<T> other) const{//Posiblemente
 }
 template <typename T>
 Matrix<T> Matrix<T>::operator-(Matrix<T> other) const{//Solo cambiaria el signo mmm
+    /*
     int i, j;
     if (this->filas == other.filas && this->columnas == other.columnas) {
         Matrix res(other);
@@ -92,7 +133,7 @@ Matrix<T> Matrix<T>::operator-(Matrix<T> other) const{//Solo cambiaria el signo 
     } else {
         Matrix res;
         return res;
-    }
+    }*/
 }
 template <typename T>
 Matrix<T> Matrix<T>::Transpuesta() const{

@@ -15,7 +15,6 @@ public:
         fila=0;
         columna=0;
     };
-
     friend class Matrix<T>;//Matrix puede aceeder a nodo
 
     void killSelf(){//Lo uso ya que esta en casi todos los proyectos de usted profe

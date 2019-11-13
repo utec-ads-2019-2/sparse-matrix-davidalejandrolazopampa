@@ -13,8 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5466d1c4-8b8d-4c73-b9f4-35656878b4a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node.h" beforeDir="false" afterPath="$PROJECT_DIR$/node.h" afterDir="false" />
@@ -35,7 +33,7 @@
   <component name="ProjectId" id="1TJ2n95dyzUTo11uHOzad4Wslo4" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/UTEC/Ciclo 3/POO2/PC3" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/sparse-matrix-rvmosquera-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -87,7 +85,7 @@
       <workItem from="1573578032394" duration="840000" />
       <workItem from="1573601206928" duration="2297000" />
       <workItem from="1573654096930" duration="1854000" />
-      <workItem from="1573662516616" duration="1693000" />
+      <workItem from="1573662516616" duration="5740000" />
     </task>
     <servers />
   </component>

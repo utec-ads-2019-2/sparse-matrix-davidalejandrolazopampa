@@ -10,16 +10,18 @@ class Matrix {
 private:
     vector<Node<T> *> fila_;//Vector para la fila
     vector<Node<T> *> columna_;//Vector para la columna
-    unsigned rows, columns;
+    unsigned fila, columna;
 public:
-    Matrix(unsigned rows, unsigned columns);//Tamaño de la matrix dispersa
+
+    //Matrix();Aun nose si usarlo
+    Matrix(const Matrix &CopiaMatrix);
+    Matrix(unsigned fila, unsigned columna);//Tamaño de la matrix dispersa
 
     bool SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer);//initialize Rows and Cols
     bool SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer);//Usamos doble puntero para esto
 
-    void inicializar(unsigned rows, unsigned columns); //A todos Null fila y columna
-
-    void set(unsigned, unsigned, T);//Para chantar los nuevos nodos o desaparecerlos
+    void inicializar(unsigned fila, unsigned columna); //A todos Null fila y columna
+    void set(unsigned fila, unsigned columna, T valor);//Para chantar los nuevos nodos o desaparecerlos
 
     T operator()(unsigned, unsigned) const;
     Matrix<T> operator=(Matrix<T> other) const;//Operador igual
