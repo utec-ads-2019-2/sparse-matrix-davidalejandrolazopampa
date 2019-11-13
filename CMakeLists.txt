@@ -11,4 +11,5 @@ add_executable(sparse_matrix_davidalejandrolazopampa
         mocker/mocker.cpp
         tester/tester.cpp
         main.cpp
-        matrix.cpp matrix.h)
+        matrix.cpp
+        matrix.h)

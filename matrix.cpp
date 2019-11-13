@@ -10,10 +10,10 @@ template <typename T>
 bool Matrix<T>::SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer) {
     bool valor = false;
     for (pointer = &fila_[x]; NULL != *pointer; pointer = &(*pointer)->down) {//recore y asigno
-        if (x == (*pointer)->columnaa) {
+        if (x == (*pointer)->columna) {
             valor = true;//existe
             break;
-        } else if (x < (*pointer)-> columnaa) {//si es menor ----
+        } else if (x < (*pointer)-> columna) {//si es menor ----
             *pointer = (*pointer)->down;//sigue
             valor = false;//No existe --- voy al set y meto
         }
@@ -24,10 +24,10 @@ template <typename T>
 bool Matrix<T>::SiguienteFila(unsigned x, unsigned y, Node<T> **&pointer) {
     bool valor = false;
     for (pointer = &columna_[x]; NULL != *pointer; pointer = &(*pointer)->next) {//recore y asigno
-        if (x == (*pointer)->filaa) {
+        if (x == (*pointer)->fila) {
             valor = true;//existe
             break;
-        } else if (x < (*pointer)-> filaa) {//si es menor ----
+        } else if (x < (*pointer)-> fila) {//si es menor ----
             *pointer = (*pointer)->next;//sigue
             valor = false;//No existe --- voy al set y meto
         }
@@ -83,8 +83,8 @@ void Matrix<T>::set(unsigned fila, unsigned columna, T valor){
     auto resultX = SiguienteFila(fila, columna, DPunteroX);
     if (resultY) {//Si existe el Node
         if (valor) {//si es diferente de 0
-            (*DPunteroY)->data = valor;
-            (*DPunteroX)->data = valor;
+            (*DPunteroY)->valor = valor;
+            (*DPunteroX)->valor = valor;
         } else {// si es 0 lo elimino
             *DPunteroY = (*DPunteroY)->down;
             *DPunteroX = (*DPunteroX)->next;
@@ -95,7 +95,7 @@ void Matrix<T>::set(unsigned fila, unsigned columna, T valor){
             auto newNode = new Node<T>();
             newNode->posX = fila;
             newNode->posY = columna;
-            newNode->data = valor;
+            newNode->valor = valor;
             //Aqui asigno
             newNode->down = *DPunteroY;
             *DPunteroY = newNode;
@@ -114,7 +114,7 @@ T Matrix<T>::operator()(unsigned f, unsigned c) const {// agregue el F C nose mm
         auto downAux = auxCol;//para el artificio
         while (downAux) {
             if (downAux->posY == c)
-                return downAux->data;
+                return downAux->valor;
             downAux = downAux->down;//Sigo hasta encontrarlo
         }
         return 0;
@@ -127,7 +127,7 @@ Matrix<T> Matrix<T>::operator*(T escalar) const{
         if (auxCol)//Sigo sigo sigo
         {
             while (auxCol) {
-                NuevoResultado.set(auxCol->fila, auxCol->columna, auxCol->data * escalar);//Hago la accion
+                NuevoResultado.set(auxCol->fila, auxCol->columna, auxCol->valor * escalar);//Hago la accion
                 auxCol = auxCol->down;//empiso el primero y luego el siguente del siguente
             }
         }
@@ -163,7 +163,7 @@ Matrix<T> Matrix<T>::operator+(Matrix<T> other) const{//Posiblemente
                 NuevoResultado.set(
                         AuxFila->fila,
                         AuxFila->columna,
-                        AuxFila->data + other(AuxFila->fila, AuxFila->columna));
+                        AuxFila->valor + other(AuxFila->fila, AuxFila->columna));
                 AuxFila = AuxFila->down;
             }
         }
@@ -182,7 +182,7 @@ Matrix<T> Matrix<T>::operator-(Matrix<T> other) const{//Solo cambiaria el signo 
                 NuevoResultado.set(
                         AuxFila->fila,
                         AuxFila->columna,
-                        AuxFila->data - other(AuxFila->fila, AuxFila->columna));
+                        AuxFila->valor - other(AuxFila->fila, AuxFila->columna));
                 AuxFila = AuxFila->down;
             }
         }
@@ -197,7 +197,7 @@ Matrix<T> Matrix<T>::Transpuesta() const{
         if (!this->fila_[i]) continue;
         auto auxColumna = fila_[i];
         while(auxColumna) {
-            NuevoResultado.set(auxColumna->columna, auxColumna->columna, auxColumna->data);
+            NuevoResultado.set(auxColumna->columna, auxColumna->columna, auxColumna->valor);
             auxColumna = auxColumna->down;
         }
     }
@@ -212,7 +212,7 @@ void Matrix<T>::Mostrar() const{//Espero no morir aqui
             ceros(num);
             while (AuxColumna) {
                 printZeros(AuxColumna->columna - num - 1);
-                cout << " " << AuxColumna->data << " ";
+                cout << " " << AuxColumna->valor << " ";
                 num = AuxColumna->columna;
                 AuxColumna = AuxColumna->down;
             }
