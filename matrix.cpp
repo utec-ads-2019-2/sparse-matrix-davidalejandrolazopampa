@@ -1,6 +1,6 @@
 //
 // Created by David Lazo on 11/11/2019.
-//
+/*
 #include "node.h"
 #include "matrix.h"
 #include <iostream>
@@ -233,3 +233,4 @@ Matrix<T>::~Matrix() {//Aun no estoy seguro que esto sea asi xD puedo poner kill
     fila_.clear();
     columna_.clear();
 }
+*/
