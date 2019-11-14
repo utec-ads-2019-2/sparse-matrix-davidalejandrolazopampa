@@ -35,7 +35,7 @@ int main() {
     cout<<"Matrix A Transpuesta"<<endl;
     matrix_H = matrix_A.Transpuesta();
     matrix_H.Mostrar();cout<<endl;
-
+    
     cout<<"Matrix E = Matrix A * MatrixB"<<endl;
     auto matrix_E = matrix_B * matrix_C;
     matrix_E.Mostrar();cout<<endl;
