@@ -160,7 +160,7 @@ public:
         for (i=0;i< NuevoResultado.fila;++i) {
             for (j=0;j< NuevoResultado.columna;++j) {
                 for (k=0;k<this->columna;k++){
-                    aux +=  Matrix()(i, k) * other(k, j);
+                    aux = aux +  operator()(i, k) * other(k, j);
                     NuevoResultado.set(i, j, aux);
                 }
             }

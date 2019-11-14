@@ -8,9 +8,9 @@ int main() {
     Matrix<int> matrix_B(3,3);
     Matrix<int> matrix_C(3,3);
     Matrix<int> matrix_D(3,3);
-    Matrix<int> matrix_E(3,3);
-    Matrix<int> matrix_F(3,3);
-    Matrix<int> matrix_G(3,3);
+    //Matrix<int> matrix_E(3,3);
+    //Matrix<int> matrix_F(3,3);
+    //Matrix<int> matrix_G(3,3);
     Matrix<int> matrix_H(3,3);
 
     matrix_A.set(0,0,1);
@@ -33,19 +33,19 @@ int main() {
     matrix_D.Mostrar();cout<<endl;
 
     cout<<"Matrix A Transpuesta"<<endl;
-    matrix_F = matrix_A.Transpuesta();
-    matrix_F.Mostrar();cout<<endl;
+    matrix_H = matrix_A.Transpuesta();
+    matrix_H.Mostrar();cout<<endl;
 
     cout<<"Matrix E = Matrix A * MatrixB"<<endl;
-    matrix_E = matrix_B * matrix_C;
+    auto matrix_E = matrix_B * matrix_C;
     matrix_E.Mostrar();cout<<endl;
 
     cout<<"Matrix F = Matrix A + MatrixB"<<endl;
-    matrix_F = matrix_A + matrix_B;
+    auto matrix_F = matrix_A + matrix_B;
     matrix_F.Mostrar();cout<<endl;
 
     cout<<"Matrix G = Matrix A - MatrixB"<<endl;
-    matrix_G = matrix_A - matrix_B;
+    auto matrix_G = matrix_A - matrix_B;
     matrix_G.Mostrar();cout<<endl;
 
 
