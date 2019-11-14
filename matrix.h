@@ -186,8 +186,37 @@ public:
         }
         return NuevoResultado;
     }//suma
-    Matrix<T> operator-(Matrix<T> other) const;//Resta
-    Matrix<T> Transpuesta() const;//Invertir Filas y Columnas
+    Matrix<T> operator-(Matrix<T> other) const{
+        Matrix<T> NuevoResultado(this->fila, this->columna);//Se crea el nuevo
+        if(this->fila != other.fila and this->columna != other.columna) {
+            cout<<"No coincide el tamaño";
+        }
+        for (auto AuxFila: fila_) {
+            if (AuxFila) {
+                while (AuxFila) {
+                    NuevoResultado.set(
+                            AuxFila->fila_x,
+                            AuxFila->columna_y,
+                            AuxFila->valor - other(AuxFila->fila_x, AuxFila->columna_y));
+                    AuxFila = AuxFila->down;
+                }
+            }
+        }
+        return NuevoResultado;
+    }//Resta
+    Matrix<T> Transpuesta() const{
+        Matrix<T> NuevoResultado(this->columna, this->fila);
+
+        for( int i=0 ; i < this->fila ; ++i) {
+            if (!this->fila_[i]) continue;
+            auto auxColumna = fila_[i];
+            while(auxColumna) {
+                NuevoResultado.set(auxColumna->columna_y, auxColumna->fila_x, auxColumna->valor);
+                auxColumna = auxColumna->down;
+            }
+        }
+        return NuevoResultado;
+    }//Invertir Filas y Columnas
     void ceros(int num)const{
         for(int j=0 ; j < num ; ++j) {
             cout<<"*"<<0<<"*";
