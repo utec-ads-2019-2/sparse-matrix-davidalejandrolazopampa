@@ -1,9 +1,11 @@
 //
 // Created by David Lazo on 11/11/2019.
 //
+#include "node.h"
 #include "matrix.h"
 #include <iostream>
 using namespace std;
+
 template <typename T>
 bool Matrix<T>::SiguienteColumna(unsigned x, unsigned y, Node<T> **&pointer) {
     bool valor = false;
@@ -46,16 +48,7 @@ void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
 }
 template <typename T>
 Matrix<T>::Matrix(unsigned fila, unsigned columna) {
-    /*
-    //Elimino primero lo que hay
-    fila_.clear(),columna_.clear();
-    //A todos Null
-    for(int i=0; i < fila; ++i){
-        fila_.push_back(nullptr);
-    }
-    for(int i=0; i<columna;++i){
-        columna_.push_back(nullptr);
-    }*/inicializar(fila,columna);
+    inicializar(fila,columna);
 }
 template <typename T>
 Matrix<T>::Matrix(const Matrix &CopiaMatrix) {

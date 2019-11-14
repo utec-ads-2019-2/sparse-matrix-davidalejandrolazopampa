@@ -1,11 +1,16 @@
 #include <iostream>
-#include "matrix.cpp"
+#include "matrix.h"
 using namespace std;
 //David Lazo
 int main() {
+    auto *test = new Matrix<int>(7, 7);
 
+    test->set(1, 0, 7);
+    test->set(2, 0, 10);
+    /*
     Matrix<int> matrix_A(3,3);
     Matrix<int> matrix_B(3,3);
+
     matrix_A.set(0,0,6);
     matrix_A.set(0,1,4);
     matrix_A.set(0,3,5);
@@ -30,6 +35,6 @@ int main() {
     matrix_A.Mostrar();
     cout << "Matrix B"<<endl;
     matrix_B.Mostrar();
-    //return 0;
+    //return 0;*/
 }
 

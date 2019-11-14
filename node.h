@@ -6,6 +6,7 @@ class Matrix;
 template <typename T>
 class Node {
 public:
+    T valor;
     Node<T> *next;
     Node<T> *down;
     int fila,columna;
