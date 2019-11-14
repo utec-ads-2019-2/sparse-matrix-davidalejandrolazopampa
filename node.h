@@ -9,12 +9,12 @@ public:
     T valor;
     Node<T> *next;
     Node<T> *down;
-    int fila,columna;
+    int fila_x,columna_y;
     explicit Node(){
         next= nullptr;
         down= nullptr;
-        fila=0;
-        columna=0;
+        fila_x=0;
+        columna_y=0;
     };
     friend class Matrix<T>;//Matrix puede aceeder a nodo
 
