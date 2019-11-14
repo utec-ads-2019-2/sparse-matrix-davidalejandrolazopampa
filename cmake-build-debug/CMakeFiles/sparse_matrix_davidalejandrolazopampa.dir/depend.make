@@ -6,8 +6,6 @@ CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj: ../matrix.h
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/main.cpp.obj: ../node.h
 
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj: ../matrix.cpp
-CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj: ../matrix.h
-CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/matrix.cpp.obj: ../node.h
 
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/mocker/mocker.cpp.obj: ../mocker/mocker.cpp
 CMakeFiles/sparse_matrix_davidalejandrolazopampa.dir/mocker/mocker.cpp.obj: ../mocker/mocker.h

@@ -160,7 +160,7 @@ public:
         for (i=0;i< NuevoResultado.fila;++i) {
             for (j=0;j< NuevoResultado.columna;++j) {
                 for (k=0;k<this->columna;k++){
-                    aux = aux +  operator()(i, k) * other(k, j);
+                    aux +=  Matrix()(i, k) * other(k, j);
                     NuevoResultado.set(i, j, aux);
                 }
             }
@@ -170,7 +170,7 @@ public:
 //Multiplicacion
     Matrix<T> operator+(Matrix<T> other) const{
         Matrix<T> NuevoResultado(this->fila, this->columna);//Se crea el nuevo
-        if(this->fila != other.fila and this->columna != other.columna) {
+        if(this->fila != other.fila || this->columna != other.columna) {
             cout<<"No coincide el tamaño";
         }
         for (auto AuxFila: fila_) {
@@ -188,7 +188,7 @@ public:
     }//suma
     Matrix<T> operator-(Matrix<T> other) const{
         Matrix<T> NuevoResultado(this->fila, this->columna);//Se crea el nuevo
-        if(this->fila != other.fila and this->columna != other.columna) {
+        if(this->fila != other.fila || this->columna != other.columna) {
             cout<<"No coincide el tamaño";
         }
         for (auto AuxFila: fila_) {
@@ -206,7 +206,6 @@ public:
     }//Resta
     Matrix<T> Transpuesta() const{
         Matrix<T> NuevoResultado(this->columna, this->fila);
-
         for( int i=0 ; i < this->fila ; ++i) {
             if (!this->fila_[i]) continue;
             auto auxColumna = fila_[i];
