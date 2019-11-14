@@ -46,6 +46,7 @@ void Matrix<T>::inicializar(unsigned fila, unsigned columna) {
 }
 template <typename T>
 Matrix<T>::Matrix(unsigned fila, unsigned columna) {
+    /*
     //Elimino primero lo que hay
     fila_.clear(),columna_.clear();
     //A todos Null
@@ -54,7 +55,7 @@ Matrix<T>::Matrix(unsigned fila, unsigned columna) {
     }
     for(int i=0; i<columna;++i){
         columna_.push_back(nullptr);
-    }
+    }*/inicializar(fila,columna);
 }
 template <typename T>
 Matrix<T>::Matrix(const Matrix &CopiaMatrix) {
@@ -90,16 +91,15 @@ void Matrix<T>::set(unsigned fila, unsigned columna, T valor){
     } else {//puede ser X o Y cualquiera
         if (valor) {
             //Creo el nodo como lista
-            auto newNode = new Node<T>();
-            newNode->fila = fila;
-            newNode->columna = columna;
-            newNode->valor = valor;
+            auto nuevoNodo = new Node<T>();
+            nuevoNodo->fila = fila;
+            nuevoNodo->columna = columna;
+            nuevoNodo->valor = valor;
             //Aqui asigno
-            newNode->down = *DPunteroY;
-            *DPunteroY = newNode;
-
-            newNode->next = *DPunteroX;
-            *DPunteroX = newNode;
+            nuevoNodo->down = *DPunteroY;
+            *DPunteroY = nuevoNodo;
+            nuevoNodo->next = *DPunteroX;
+            *DPunteroX = nuevoNodo;
         }
     }
 }
@@ -222,7 +222,6 @@ void Matrix<T>::Mostrar() const{//Espero no morir aqui
         }
     }
 }
-
 template <typename T>
 void Matrix<T>::ceros(int num) const {
     int contador=0;
@@ -230,7 +229,6 @@ void Matrix<T>::ceros(int num) const {
         cout<<" "<<contador<<" ";
     }
 }
-
 template <typename T>
 Matrix<T>::~Matrix() {//Aun no estoy seguro que esto sea asi xD puedo poner kills... pero no se
     for(auto auxColumna : columna_ ) {

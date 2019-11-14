@@ -1,5 +1,6 @@
 #include <iostream>
 #include "matrix.cpp"
+using namespace std;
 //David Lazo
 int main() {
 
