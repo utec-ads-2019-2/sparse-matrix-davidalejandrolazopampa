@@ -76,6 +76,8 @@ public:
     }
 
     void set(unsigned fila, unsigned columna, T valor){
+        // Dónde estás borrando si es 0? 
+
         //Inicio el nuevo puntero
         Node<T> **DPunteroX = nullptr;
         Node<T> **DPunteroY = nullptr;
@@ -152,6 +154,9 @@ public:
         }
         return nuevoresultado;
     }//Operador escalar (solo multiplicar)
+
+    // Utilizar los métodos de la matriz para las operaciones, hará que tus tiempos sean más lentos, deberías ir por los punteros directamente
+
     Matrix<T> operator*(Matrix<T> other) const{
         int i,j,k;T aux = 0;
         Matrix<T> NuevoResultado(this->fila, other.columna);
@@ -248,6 +253,7 @@ public:
     ~Matrix(){
         fila_.clear();
         columna_.clear();
+        // Aquí solo liberas los vectors pero no eliminas lo spunteros
     }//Destructor; debo eliminar los nodos
 };
 
